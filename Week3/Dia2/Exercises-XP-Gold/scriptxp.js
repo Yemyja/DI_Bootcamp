@@ -88,7 +88,7 @@ switch(operation){
     case "+":
         result= number1 + number2;
         break;
-        case "+";
+        case "+" :
             result= number1 - number2;
             break;
             case "*":
@@ -105,6 +105,4 @@ if (result){
     console.log ("Result:" + result);
 }
     
-    
-
-
+  
