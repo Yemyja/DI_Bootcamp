@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+  <div id="container">
+    <p>This is some text in a paragraph.</p>
+  </div>
+  <h1 id="title"></h1>
+<p id="demo"></p>
+<div id="cuerpo"></div>
+<div id="footer"></div>
+<div id="navbar"></div>
+<h1 id="title"></h1>
+<p id="demo"></p>
+<p id="p2">Hello World¡</p>
+
+<ul>
+  <li>the</li>
+  <li>test</li>
+</ul>
+<ul>
+  <li>has</li>
+  <li>passed</li>
+</ul>
+<p id="text1">DOM Attribute</p>
+
+<!-- JavaScript to add new element -->
+<script>
+
+
+document.getElementById("title").innerHTML="Titulo";
+document.getElementById("demo").innerHTML="Esto es un parrafo!";
+document.getElementById ("cuerpo").innerHTML = "Esto el el cuerpo de la pagina";
+document.getElementById("footer").innerHTML="Estoeselpiedepagina"
+document.getElementById("navbar").innerHTML="HOLA";
+document.getElementsByTagName("div")[0];
+document.querySelector("div"); //agarra el primero
+document.querySelectorAll("div");
+  // create a new paragraph element
+  let newPara = document.createElement('p');
+  // add text to the new paragraph element
+  let paraText = document.createTextNode('This is a new paragraph added using JavaScript!');
+  newPara.appendChild(paraText);
+  // get a reference to the container element
+  let container = document.getElementById('container');
+  // add the new paragraph element to the container
+  container.appendChild(newPara);
+  document.getElementById("p2").style.color="blue";
+  let elements = document.querySelectorAll('ul>li:last-child');
+  for(let elem of elements){
+    alert(elem.innerHTML);//"test","passed"
+  }
+  //Get the paragraph element
+  let paragraph= document.getElementById("text1");
+  // Modify the style of the paragraph element
+
+  paragraph.style.fontSize= "24px";
+  paragraph.style.fontfamily= "Arial";
+  paragraph.style.color= "red";
+
+
+
+    </script>
+</body>
+</html>

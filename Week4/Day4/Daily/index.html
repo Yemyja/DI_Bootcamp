@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Instructions
+
+Prompt the user for several words (separated by commas).
+Put the words into an array.
+Console.log the words one per line, in a rectangular frame as seen below.
+Check out the Hints and Requirements below.
+For example, if the user gives you: 
+Hello, World, in, a, frame
+you will transform it to : ["Hello", "World", "in", "a", "frame"]
+that will get displayed as:
+
+stars and words -->
+
+    <script>
+         let exercise = () =>{
+
+let frase = prompt('into a phrase and separate by commas')
+let matriz = frase.split(',');
+let flags = 0;
+for(x of matriz){
+    if(flags < x.length) {
+        flags = x.length;
+    }
+}
+
+
+let flags2 = 0;
+let line = '';
+for(i=0;i<flags;i++){
+    let x=0;
+    if (i === 0){
+        while(x < flags+4){
+            x++
+            line += '*'
+        }
+    }
+}
+console.log(line);
+
+    if(flags2 === 0){
+        flags2++
+        let x = 0
+        let line2 = '';
+        while(x < matriz.length){
+            let a =(flags+2) - matriz[x].length
+            matriz[x] = ('* ' + matriz[x]);
+                                           
+            for(y= matriz[x].length; y<= flags+2;y++) {
+                matriz[x] += ' '
+            }
+            matriz[x] += '*'
+            console.log(matriz[x]) 
+            x++
+            line2 += '*'
+        }
+    }
+    console.log(line);
+    
+    
+    }
+
+
+exercise();
+    </script>
+</body>
+</html>
