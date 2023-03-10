@@ -1,18 +1,9 @@
-Exercises xp
+Este código es una serie de instrucciones JavaScript que interactúan con el Document Object Model (DOM) de una página web para realizar varias acciones. Vamos a analizar cada sección del código:
 
-Using a DOM property, retrieve the h1 and console.log it.
-Use un queryselector y llame al h1
-
-Using DOM methods, remove the last paragraph in the <article> tag.
-
-
-
-Add a event listener which will change the background color of the h2 to red, when it’s clicked on.
-
-Add an event listener which will hide the h3 when it’s clicked on (use the display:none property).
-
-Add a <button> to the HTML file, that when clicked on, should make the text of all the paragraphs, bold.
-
-BONUS : When you hover on the h1, set the font size to a random pixel size between 0 to 100.(Check out this documentation)
-
-BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fade css animation” on Google)
+Para obtener el elemento <h1> del documento HTML, el código usa el método querySelector() de la interfaz document y le pasa el selector de etiqueta CSS "h1". Luego, el texto del elemento se obtiene utilizando la propiedad textContent y se muestra en la consola mediante console.log().
+Para eliminar el último párrafo del elemento <article>, se utiliza el método querySelectorAll() para obtener todos los elementos de párrafo, y luego se selecciona el último párrafo de la lista utilizando paragraphs[paragraphs.length - 1]. Después, se elimina el último párrafo usando el método remove().
+Para cambiar el color de fondo del elemento <h2> cuando se hace clic en él, se utiliza el método addEventListener() para agregar un event listener de tipo click al elemento <h2>. Cuando se hace clic en el elemento, se cambia el valor de la propiedad backgroundColor de la hoja de estilos CSS del elemento a "red".
+Para ocultar el elemento <h3> cuando se hace clic en él, se utiliza el método addEventListener() para agregar un event listener de tipo click al elemento <h3>. Cuando se hace clic en el elemento, se cambia el valor de la propiedad display de la hoja de estilos CSS del elemento a "none", lo que oculta el elemento.
+Para agregar un botón a la página web que hace que el texto de todos los párrafos se vuelva negrita cuando se hace clic en él, se utiliza el método querySelector() para seleccionar el botón y se agrega un event listener de tipo click al botón. Cuando se hace clic en el botón, se utiliza el método forEach() para iterar sobre todos los elementos de párrafo y se establece el valor de la propiedad fontWeight de su hoja de estilos CSS a "bold".
+Como bonificación, cuando el usuario pasa el cursor sobre el elemento <h1>, su tamaño de fuente cambia a un valor aleatorio entre 0 y 100 píxeles. Esto se logra utilizando el método addEventListener() para agregar un event listener de tipo mouseenter al elemento <h1>. Cuando se activa el evento, se llama a la función getRandomSize(), que devuelve un número aleatorio entre 0 y 100. Luego, se establece el valor de la propiedad fontSize de la hoja de estilos CSS del elemento <h1> en este valor aleatorio.
+Como segunda bonificación, cuando el usuario pasa el cursor sobre el segundo párrafo, se agrega una clase CSS "fade" al elemento que hace que se desvanezca. Esto se logra utilizando el método addEventListener() para agregar un event listener de tipo mouseenter al segundo párrafo. Cuando se activa el evento, se utiliza el método classList.add() para agregar la clase CSS "fade" al elemento. La clase CSS "fade" debe estar definida en la hoja de estilos CSS de la página para que funcione.
