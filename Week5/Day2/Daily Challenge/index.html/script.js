@@ -25,7 +25,7 @@ const listPlanet = document.querySelector(".listPlanets");
 planets.forEach(planet =>{
     let planetDiv = document.createElement ("div");
     planetDiv.classList.add('planet', planet.name.toLowerCase());
-    listPlanets.apendChild(planetDiv);
+    listPlanet.apendChild(planetDiv);
 
     for (let i = 1 ; i <= planet.moons; i++){
 let moonDiv = document.createCDATASection ('div');

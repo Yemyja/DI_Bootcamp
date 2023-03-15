@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+    <style>
+/* #banner {
+			background-color: rgb(21, 0, 255);
+			color: white;
+			font-size: 24px;
+			padding: 10px;
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 9999;
+			text-align: center;
+		} */
+        /* body {
+   margin : 20px
+}
+
+button {
+  text-align : center;
+  font-size : 0px;
+  font-weight: bold;
+  height : 50px;
+  height : 50px;
+}
+
+.outer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+
+.inner {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red; */
+}
+    </style>
+</head>
+<body>
+    <p>Compra hoy¡¡¡</p> 
+    <div id="banner">¡Las ventas terminan en 10 minutos!</div>
+	<script>
+		setTimeout(function() {
+			document.getElementById("banner").style.display = "block";
+            countdown();
+		}, 5000);
+  //function to update the countdown in the banner
+  function countdown(){
+    let banner1 =document.getElementById( "banner");
+    if (duration > 0){
+        banner1.innerHTML = "Las ventas terminan en:" + duration + "segundos!";
+        duration--;
+        setTimeout(countdown,1000);
+    }else{
+        banner1.innerHTML = "Las ventas han termonado";}
+
+    }
+    
+      </script>
+</body>
+<!-- <body class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="setTime()">setTimeout</button></p>
+        <p><button type="button" class="btn btn-success btn-lg" onclick="setInter()">setInterval</button></p>
+        <p><button type="button" class="btn btn-danger btn-lg" onclick="clearInter()">clearInterval</button></p>
+        
+        
+        
+        <p><button type="button" class="btn btn-warning btn-lg" onclick="myMove()">Click Me</button></p>
+        
+        
+        
+      </div>
+      <div class="col-md-6">
+        <div id='root'></div>
+      </div>
+   </div>
+    <script src="anim.js" charset="utf-8"></script>
+  <script>
+    function setTime(){
+        setTimeout(function(){
+          alert('hello');
+        },3000)
+      }
+      
+      let id;
+      function setInter(){
+        let num = 0
+        id = setInterval(function(){
+          console.log(num);
+          num ++
+        },1000);
+      }
+      
+      function clearInter(){
+        clearInterval(id);
+      }
+      
+      let root = document.getElementById('root');
+      
+      let outer = document.createElement('div');
+      let inner = document.createElement('div');
+      outer.classList.add('outer');
+      inner.classList.add('inner');
+      inner.setAttribute('id','main');
+      outer.appendChild(inner);
+      root.appendChild(outer);
+      
+      function myMove() {
+        var elem = document.getElementById("main");
+        var pos = 0;
+        let id = setInterval(function() {
+          if (pos == 350) {
+            clearInterval(id);
+          }
+          else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }, 5);
+      }
+    </script> -->
+    </body>
+</html>
