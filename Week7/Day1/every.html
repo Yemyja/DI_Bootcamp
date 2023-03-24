@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios </title>
+    <style>
+        div {
+            width: 700px;
+            height: 500px;
+            border:15 solid black;
+            padding:5 px;
+            margin:auto;
+position: absolut;
+background-color: green;
+display:block;
+margin-top:30px;
+        }
+        button{
+            margin-top:70px;
+            padding: 20px;
+            background-color:grey;
+           margin-left: 290px;
+        }
+        input{
+        margin: 20px;
+        padding:15px;
+        }
+        P{
+            font-size: 30PX;
+            text-align: center;
+            color:aliceblue
+        }
+    </style>
+</head>
+<body>
+    <div>
+      
+    <input type ="text" id="yearInput" placeholder="enter a year"/>
+    <button onclick="checkYear1()">Check Year</button>
+    <p id= "output" ></p>
+
+    <input type ="text" id="num1" placeholder="enter a number"/>
+    <input type ="text" id="num2" placeholder="enter a number"/>
+    <input type ="text" id="operacion" placeholder="enter operation"/>
+    <!-- <select id="operacion">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">x</option>
+		<option value="/">/</option> -->
+	</select>
+    <button onclick="calculator1 ()">Check result</button>
+    <p id= "resultado" ></p>
+</div>
+<label for="words-input">Enter words:</label>
+<input type="text" id="words-input">
+<button onclick="checkWords()">Check words</button>
+<p id="result"></p>
+
+
+
+    <script src="every().js"></script>
+
+
+</body>
+</html>
