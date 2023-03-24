@@ -1,0 +1,6 @@
+Este código JavaScript tiene como objetivo crear una lista de tareas en una página web y permitir a los usuarios agregar, marcar como completada y eliminar tareas de la lista. Aquí hay una explicación detallada de lo que cada sección del código hace.
+se están obteniendo los elementos del HTML que contienen la lista de tareas y el formulario para agregar nuevas tareas.
+Se crea un array vacío llamado tasks, que almacenará todos los objetos de tarea.
+La función addTask() se utiliza para agregar una nueva tarea a la lista. Primero, se obtiene el valor de entrada y se verifica si está vacío. Si la entrada no está vacía, se crea un nuevo objeto de tarea con un task_id que es la longitud del array tasks, el texto de la tarea y el estado de la tarea como false.
+
+Luego, se agrega el nuevo objeto de tarea al array tasks. Después, se crea un nuevo elemento de div para la tarea y se le agrega un botón de eliminar, una casilla de verificación y una etiqueta de texto. Se establece un atributo data-task-id en el elemento div con el task_id de la tarea, y el elemento div se agrega a la lista de tareas en el DOM. Finalmente, se limpia el campo de entrada.
