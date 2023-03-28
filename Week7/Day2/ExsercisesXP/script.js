@@ -192,3 +192,11 @@ function addVat(details) {
   });
   return total;
 }
+  
+
+//otra forma de hacer la  funcion  mas reducida para lograrlo
+
+function addVat (details){
+    const VAT_RATE = 0.17;
+    return details.reduce ((total,current) => (total += Number(current) * (1 + VAT_RATE)), 0);
+}
