@@ -87,7 +87,6 @@
   color: #fff;
 }
     
-  }
   
 
   #cardContainer {
@@ -122,11 +121,15 @@
       </style>
     </head>
     <body>
-      
-        <input type="text" id="searchBox" placeholder="Search by name">
+      <div id="searchBoxContainer">
+        <input type="text" id="searchBox" placeholder="Search by name"> </div>
         <div id="cardContainer"></div>
 
-
+<div id="profileContainer">
+  <div id="backBtn">Back</div>
+  <img id="profileImage" src="" alt="Profile Image">
+  <div id="profileDetails"></div>
+</div>
     <script>
         
         const robots = [
@@ -204,6 +207,11 @@
 
 const cardContainer = document.getElementById('cardContainer'); // Get the container element by its id
 const searchBox = document.getElementById('searchBox'); // Get the search box input element by its id
+const profileContainer = document.getElementById("profileContainer");
+const profileImage= document.getElementById("profileImage");
+const profileDetails= document.getElementById("profileDetails");
+const backBtn= document.getElementById("backBtn");
+
 
 // Function to filter robots based on input value
 const filterRobots = () => {
@@ -245,8 +253,11 @@ const filterRobots = () => {
     card.appendChild(email); // Append email to card
     card.className = 'card p'
 
-    // Append card to card container
-    cardContainer.appendChild(card);
+  
+    //Add click event listener to robot image
+    img.addEventListener("click", () => showProfile(robot));
+      // Append card to card container
+      cardContainer.appendChild(card);
   });
 };
 
@@ -255,6 +266,32 @@ searchBox.addEventListener('input', filterRobots);
 
 // Initial card creation on page load
 filterRobots();
+// function to show profile and clicked robot
+const showProfile =(robot) => {
+  //ser profile image source and alt
+  profileImage.src = robot.image;
+  profileImage.alt=robot.name;
+  //set profile details
+  profileDetails.innerHTML=
+  `<h2> ${robot.name}</h2>
+  <p>Username: ${robot.username}</p>
+  <p>Email: ${robot.email}</p>;`
+
+  //Show profile container and hide card container
+  cardContainer.style.display="none";
+  profileContainer.style.display="flex";
+
+  //function to go back to main robots page frome profile page
+  const goBack = () =>{
+
+    //Hide profile container and show card container
+    profileContainer.style.display ="none";
+    cardContainer.style.display="inline-block";
+  }
+
+  // Click add event listener to back button
+  backBtn.addEventListener("click",goBack);
+}
 
     </script>
 </body>
