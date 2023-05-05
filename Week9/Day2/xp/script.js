@@ -33,12 +33,25 @@ const marioGame = {
 // const stringified = JSON.stringify(marioGame);
 // console.log("stringified",stringify);
 //   Convert and pretty print this JS object into a JSON object. Hint : Check out the JSON lesson on the platform.
-const stringified = JSON.stringify(marioGame, null, 2);
- console.log("stringified",stringified);
+// const stringified = JSON.stringify(marioGame, null, 2);
+//  console.log("stringified",stringified);
 //   Use your web inspector to add a breakpoint. Check the values of the JSON object in the debugger. -->
 
 
+const stringified = JSON.stringify(marioGame, (key,value)=>{
+// Exclude properties whit key "speed"
+if (key === "speed"){
+  return undefined;
+}
+if (key === "height"){
+  return value + "kg";
+}
+return value;
+}, 2)
+console.log ("stringifed:",stringified);
 
+
+  
 
 
 
