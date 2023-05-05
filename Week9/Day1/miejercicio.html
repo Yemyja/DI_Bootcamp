@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi ejercicio</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+        }
+        form {
+          border: 2px solid #ccc;
+          background-color: #fff;
+          padding: 20px;
+          margin: 20px;
+          max-width: 400px;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], input[type="number"] {
+          padding: 5px;
+          margin-bottom: 10px;
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+        input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+        input[type="submit"]:hover {
+          background-color: #45a049;
+        }
+        h2, h3 {
+          margin-top: 20px;
+        }
+        select {
+          margin-bottom: 10px;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 5px;
+          box-sizing: border-box;
+        }
+        p {
+          margin: 10px 0;
+        }
+      </style>
+</head>
+
+<body>
+    
+     <!-- USER FORM WHICH TAKES USER TO WELCOME PAGE AND CONSOLE LOGS USER INFO -->
+
+  <form id="login-form" onsubmit="submitForm(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <label for="casa">Casa:</label>
+    <input type="number" id="casa" name="casa"><br>
+    <label for="lugar">Lugar:</label>
+    <input type="text" id="lugar" name="lugar"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 id="welcome-msg" style="display: none;">Estas listo para hacer tu pedido!</h2>
+  <h3 id = "pedido" style="display:none">Elige lo que te gustaría pedir</h3>
+  <div id="comida" style="display: none;">
+    <label for="verdura" >
+      <input type="checkbox" id="verdura" name="verdura" value="verdura">
+     Verdura
+    </label>
+    <label for="papas">
+      <input type="checkbox" id="papas" name="papas" value="papas">
+      Papas
+    </label>
+    <label for="fruta" >
+      <input type="checkbox" id="fruta" name="fruta" value="fruta">
+      Fruta
+    </label>
+  </div>
+
+  <select id="comida1" multiple style="display: none;">
+    <option value="verdura" selected>Verdura</option>
+    <option value="papas" selected>Papas</option>
+    <option value="fruta">Fruta</option>
+    <!-- <select id="salsas" multiple style="display: none;">
+        <option value="limon" selected>limon</option>
+        <option value="chile" selected>Chile</option>
+        <option value="chamoy">Chamoy</option> -->
+  </select>
+
+  <script>
+    
+    function submitForm(event) {
+      event.preventDefault(); // prevent the form from submitting normally
+    
+      // get the values of the form fields
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const casa = document.getElementById('casa').value;
+      const lugar = document.getElementById('lugar').value;
+      
+      // hide the login form
+      document.getElementById('login-form').style.display = 'none';
+
+
+      // show the welcome message
+      const welcomeMsg = document.getElementById('welcome-msg',);
+      welcomeMsg.style.display = 'block';
+      welcomeMsg.innerText = `Bienvenido ahora puedes hacer tu pedido, ${username}!`;
+      
+      // show the welcome message
+      const hazpedido = document.getElementById('pedido');
+      hazpedido.style.display = 'block';
+      hazpedido.innerText = `Elige que quieres comer, ${username}!`;
+
+      const salsasaelegir = document.getElementById('salsas');
+      salsasaelegir.style.display = 'block';
+      salsasaelegir.innerText = `Que salsas quieres ponerle, ${username}!`;
+
+    //   const salsas = document.getElementById('salsas');
+    //   salsas.style.display = 'block';
+    //   salsas.innerText = `Que salsas quieres ponerle, ${username}!`;
+    
+
+      const comida = document.getElementById('comida');
+      comida.style.display = 'block';
+      comida.innerText = `Que salsas quieres ponerle, ${username}!`;
+    // get all selected values from multi-select
+  let selected = Array.from(select.options)
+    .filter(option => option.selected)
+    .map(option => option.value);
+
+
+  // get all selected values from comida select
+  const selectedComida = Array.from(comida.options)
+    .filter(option => option.selected)
+    .map(option => option.value);
+  
+  // show the selected values from comida select
+  const comidaMsg = document.createElement('p');
+  comidaMsg.innerText = `Has seleccionado ${selectedComida.length} alimentos: ${selectedComida.join(', ')}.`;
+  document.body.appendChild(comidaMsg);
+
+  // get all selected values from salsas select
+  const salsas = document.getElementById('salsas');
+  const selectedSalsas = Array.from(salsas.options)
+    .filter(option => option.selected)
+    .map(option => option.value);
+  
+  // show the selected values from salsas select
+  const salsasMsg = document.createElement('p');
+  salsasMsg.innerText = `Has seleccionado ${selectedSalsas.length} salsas: ${selectedSalsas.join(', ')}.`;
+  document.body.appendChild(salsasMsg);
+}
+
+    
+</script>
+    
+    
+  
+</body>
+</html>

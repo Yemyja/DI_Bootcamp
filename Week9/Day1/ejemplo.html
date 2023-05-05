@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo</title>
+</head>
+<body>
+    <!-- USER FORM WHICH TAKES USER TO WELCOME PAGE AND CONSOLE LOGS USER INFO -->
+
+  <form id="login-form" onsubmit="submitForm(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 id="welcome-msg" style="display: none;">Welcome to this page!</h2>
+  
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // prevent the form from submitting normally
+      
+      // get the values of the form fields
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // hide the login form
+      document.getElementById('login-form').style.display = 'none';
+      
+      // show the welcome message
+      const welcomeMsg = document.getElementById('welcome-msg');
+      welcomeMsg.style.display = 'block';
+      welcomeMsg.innerText = `Welcome to this page, ${username}!`;
+
+      // log the username and password to the console
+      console.log(`Username: ${username}`);
+      console.log(`Password: ${password}`);
+    
+    }    
+  </script>
+</body>
+</html>

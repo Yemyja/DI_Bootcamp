@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+label {
+  color: #333;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+#response {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+        <!-- //Exercises 3 -->
+<h1>Search form</h1>
+<form method="get" action="https://www.google.com/search">
+    <label for="q">Search:</label>
+    <input type="text" id="q" name="q" required><br><br>
+    <input type="submit" value="search">
+    </form>
+    <p id="response" ></p>
+
+
+    <button id="generte-response">Generate Response</button>
+<p id="response1"></p>
+<!-- API EXAMPLE -->
+<!-- Retrive a randome chuck joke in JSON format : https://api.chucknorris.io/jokes/random -->
+<script> 
+
+// function to generate response
+function generateResponse(){
+let xhr = new XMLHttpRequest();
+// <!-- 1- Create a new XMLHttpRecuest object -->
+
+
+// 2- configure it GET- request for the URL
+xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
+
+//3- SEND THE REQUEST OVER THE NETWORK
+xhr.send();
+//4 This will be called after the response recived
+xhr.onload =function(){
+    if (xhr.status !=200){ // analyze HTTP status of the response
+        alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: not found
+}else {//show the result}
+// console.log (`Done ${xhr.response}`); // respond in the server
+// }
+const response = JSON.parse (xhr.response);
+document.getElementById("response1").textContent = response.value;
+};
+// xhr.onerror= function(){
+//     alert("Request failed");
+// };
+}}
+// add event listener to button
+const button = document.getElementById("generate-response");
+button.addEventListener("click", generateResponse);
+
+
+</script>
+</body>
+</html>
