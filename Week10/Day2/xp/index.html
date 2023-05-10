@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//      <!-- Ejercicio 1: Comparació
+
+// Instrucciones
+
+// Create a function called compareToTen(num) that takes a number as an argument.
+// La función debería devolver una promesa:
+// la promesa se resuelve si el argumento es inferior a 10
+// la promesa se rechaza si el argumento es mayor que 10.
+// Prueba: -->
+
+function compareToTen (num){
+    return new Promise ((resolve,reject)=> {
+    if (num > 10){
+        resolve (`${num} is grater than or equal to 10`);
+    } else {
+        reject (`${num} is less tham 10`)
+    }
+});
+}
+// <!-- In the example, the promise should reject -->
+compareToTen(15) 
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
+
+<!-- //In the example, the promise should resolve -->
+compareToTen(8) 
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
+
+
+//   Ejercicio 2: Promesa
+
+// Instrucciones
+
+// Crea una promesa que se resuelva sola en 4 segundos y devuelva una cadena de "éxito".
+// How can you make your promise from part 1 shorter using Promise.resolve() and console.log “success”?
+// Añade código para detectar errores y console.log "Oops, algo salió mal".
+
+  // Solution 1: using setTimeout
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("success");
+  }, 4000);
+});
+
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.log('Ooops something went wrong'));
+
+// Solution 2: using Promise.resolve()
+const myPromise2 = Promise.resolve("success");
+
+myPromise2
+  .then(result => console.log(result))
+  .catch(error => console.log('Ooops something went wrong'));
+
+//   Resolver Y Rechaza
+
+// Instrucciones
+
+// Use Promise.resolve(value) to create a promise that will resolve itself with a value of 3.
+// Use Promise.reject(error) to create a promise that will reject itself with the string “Boo!”
+
+const promise1 = Promise.resolve(3);
+const promise2 = Promise.reject('Boo');
+
+promise1.then (result=> console.log (result))
+.catch(error=> console.log(error));
+
+promise2.then (result=> console.log (result))
+.catch(error=> console.log(error));
+
+</script>
+
+  </script>
+</body>
+</html>
