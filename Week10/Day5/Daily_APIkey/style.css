@@ -1,0 +1,76 @@
+body {
+    
+    font-family: Arial, sans-serif, bold;
+    background-image: url("https://previews.123rf.com/images/irochka/irochka2202/irochka220200089/181787162-forma-de-globo-mapa-mundial-creado-a-partir-de-puntos-ilustraci%C3%B3n-vectorial.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #4ca5af;
+    margin:100px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .container {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+ 
+
+    
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  label {
+    /* display: block; */
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 5px;
+   
+    box-shadow: 0 0 0 1px(0, 0, 0, 0.7);
+  }
+  
+  select, input[type="number"], button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #4ca5af;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #result {
+    display: block;
+   margin:10px;
+   margin-left: 33%;
+   border:solid #4ca5af;
+   font-size: 2rem;
+ 
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    
+  }

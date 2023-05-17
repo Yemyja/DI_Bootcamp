@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <label for="from">From:</label>
+    <select id="from">
+      <option value="EUR">EUR</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="MXN">MXN</option>
+      <option value="AUD">AUD</option>
+      <option value="CAD">CAD</option>
+      <option value="EGP">EGP</option>
+      <option value="CNY">CNY</option>
+      <option value="CHF">CHF</option>
+      <option value="BRA">BRA</option>
+      <option value="RUB">RUB</option>
+      <option value="CHF">CHF</option>
+      
+      
+    </select>
+    <br />
+    <label for="to">To:</label>
+    <select id="to">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="MXN">MXN</option>
+      <option value="AUD">AUD</option>
+      <option value="CAD">CAD</option>
+      <option value="EGP">EGP</option>
+      <option value="CNY">CNY</option>
+      <option value="CHF">CHF</option>
+      <option value="BRA">BRA</option>
+      <option value="RUB">RUB</option>
+      <option value="CHF">CHF</option>
+      
+    </select>
+    <br />
+   
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" />
+    <br />
+    <div id="result"></div>
+    <button id="convertBtn">Convert</button>
+    <button id="switchBtn">Switch</button>
+
+    <br />
+  
+
+    <script>
+        const apiKey = "27d4277490c7ac11f670307b";
+        const convertBtn = document.getElementById("convertBtn");
+        const switchBtn = document.getElementById("switchBtn");
+        const resultDiv = document.getElementById("result");
+
+        convertBtn.addEventListener("click", convertCurrency);
+        switchBtn.addEventListener("click", switchCurrencies);
+
+        async function convertCurrency() {
+          const fromCurrency = document.getElementById("from").value;
+          const toCurrency = document.getElementById("to").value;
+          const amount = parseFloat(document.getElementById("amount").value);
+
+          if (isNaN(amount) || amount <= 0) {
+            resultDiv.textContent = "Please enter a valid amount.";
+            return;
+          }
+
+          const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}/${amount}`;
+
+          try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            const convertedAmount = data.conversion_result.toFixed(2);
+            resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+          } catch (error) {
+            console.log("An error occurred:", error);
+          }
+        }
+
+        function switchCurrencies() {
+          const fromCurrency = document.getElementById("from").value;
+          const toCurrency = document.getElementById("to").value;
+
+          document.getElementById("from").value = toCurrency;
+          document.getElementById("to").value = fromCurrency;
+          resultDiv.textContent = "";
+        }
+
+        // https://app.exchangerate-api.com/
+        // https://www.exchangerate-api.com/docs/supported-codes-endpoint
+    </script>
+</body>
+</html>
