@@ -37,3 +37,4 @@ SELECT * FROM students WHERE (birth_day >= '2001-03-14')
 
 
 SELECT COUNT (*) FROM students WHERE (birth_day >= '2001-03-14')
+  
