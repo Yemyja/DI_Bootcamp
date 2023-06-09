@@ -148,7 +148,7 @@
                 tasks = tasks ? JSON.parse(tasks) : [];
 
                 // Add new task to the array
-                tasks.push(task);
+                tasks.push(task) ;
 
                 // Save updated tasks to localStorage
                 localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -176,9 +176,42 @@
                         <strong>Start Date:</strong> ${task.startDate}<br>
                         <strong>End Date:</strong> ${task.endDate}<br>
                         <strong>Days Remaining:</strong> ${calculateDaysRemaining(new Date(task.endDate))}<br>
-                    `;
-                    taskList.appendChild(listItem);
-                });
+                        <button class="edit-button">Edit</button>
+                        `;
+                    taskList.appendChild(listItem);});
+ 
+                    
+                    const editButtons = taskList.querySelectorAll('.edit-button');
+    editButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            handleEditTask(index);
+        });
+    });
+}
+
+// Function to handle the edit functionality for a task
+function handleEditTask(taskIndex) {
+    // Get tasks from localStorage
+    let tasks = localStorage.getItem('tasks');
+    tasks = tasks ? JSON.parse(tasks) : [];
+
+    // Retrieve the task at the specified index
+    const task = tasks[taskIndex];
+
+                listItem.querySelector('.edit-button').addEventListener('click', function() {
+    // Obtener los detalles de la tarea
+    const taskName = task.name;
+    const taskDescription = task.description;
+    const taskStartDate = formatDate(task.startDate);
+    const taskEndDate = formatDate(task.endDate);
+
+    // Rellenar los campos del formulario de edición
+    document.getElementById('edit-name').value = taskName;
+    document.getElementById('edit-description').value = taskDescription;
+    document.getElementById('edit-start-date').value = taskStartDate;
+    document.getElementById('edit-end-date').value = taskEndDate;
+});
+
             }
 
             // Function to calculate days remaining
@@ -195,6 +228,8 @@
 
             console.log(localStorage.getItem('tasks'));
         });
+
+        
     </script>
 </body>
 </html>
