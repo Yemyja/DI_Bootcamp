@@ -22,7 +22,7 @@ http.createServer(function (req, res) {
 
 
 
-Other Solution
+// Other Solution
 
 server.js
 
