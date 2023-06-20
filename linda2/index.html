@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesiones de hipnosis en línea</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sesiones de hipnosis en línea</h1>
+  </header>
+
+  <main>
+    <!-- Aquí irá la sección para agregar los audios y mostrar la lista -->
+    <section id="audio-section">
+      <h2>Agregar nuevo audio</h2>
+      <!-- Formulario para agregar un nuevo audio -->
+      <form id="audio-form">
+        <div>
+          <label for="theme">Tema:</label>
+          <input type="text" id="theme" name="theme" required>
+        </div>
+        <div>
+          <label for="audio-name">Nombre del audio:</label>
+          <input type="text" id="audio-name" name="audio-name" required>
+        </div>
+        <div>
+          <label for="audio-file">Archivo de audio:</label>
+          <input type="file" id="audio-file" name="audio-file" accept="audio/*" required>
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
+
+      <!-- Lista de audios -->
+      <div id="audio-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

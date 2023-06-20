@@ -1,0 +1,62 @@
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #f8f8f8;
+    padding: 10px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Estilos para los formularios y las tablas */
+  .receta, #tabla-ingredientes {
+    margin-top: 20px;
+  }
+  
+  .receta input[type="text"], #tabla-ingredientes input[type="text"], #tabla-ingredientes select {
+    margin-bottom: 10px;
+  }
+  
+  #tabla-ingredientes th {
+    background-color: #f8f8f8;
+  }
+  
+  #tabla-ingredientes td, #tabla-ingredientes th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilos adicionales */
+  h1 {
+    text-align: center;
+  }
+  
+  #recetas-container {
+    margin-top: 20px;
+  }
+  
+  #total-costos {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recetas</title>
+  <style>
+    /* Estilos CSS para la presentación */
+    h1 {
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+
+    #formulario-receta {
+      margin-bottom: 20px;
+    }
+
+    .ingrediente-inputs {
+      margin-bottom: 10px;
+    }
+
+    .receta {
+      margin-bottom: 20px;
+    }
+
+    .receta h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .receta ul {
+      margin-top: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    #tabla-ingredientes {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #tabla-ingredientes th,
+    #tabla-ingredientes td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #tabla-ingredientes th {
+      background-color: #f2f2f2;
+    }
+
+    #total-costos {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Recetas</h1>
+
+  <div id="formulario-receta">
+    <h2>Agregar Receta</h2>
+    <input type="text" id="nombre-receta" placeholder="Nombre de la Receta">
+    <div id="ingredientes-container">
+      <div class="ingrediente-inputs">
+        <input type="text" class="ingrediente" placeholder="Ingrediente">
+        <input type="text" class="cantidad" placeholder="Cantidad">
+        <select>
+          <option value="gramos">Gramos</option>
+          <option value="litros">Litros</option>
+          <option value="cucharadas">Cucharadas</option>
+          <option value="tazas">Tazas</option>
+        </select>
+      </div>
+    </div>
+    <button onclick="agregarIngrediente()">Agregar Ingrediente</button>
+    <button onclick="guardarReceta()">Guardar Receta</button>
+  </div>
+
+  <div id="recetas-container"></div>
+
+  <h2>Tabla de Ingredientes</h2>
+  <table id="tabla-ingredientes">
+    <thead>
+      <tr>
+        <th>Ingrediente</th>
+        <th>Cantidad</th>
+        <th>Medida</th>
+        <th>Costo</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="total-costos"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

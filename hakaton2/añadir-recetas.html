@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pastelería - Añadir Recetas</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <nav> 
+    <a href="index.html">Home</a>
+    <a href="costo-ingredientes.html">Costo de ingredientes</a>
+    <a href="recetas-guardadas.html">Recetas guardadas</a>
+  </nav>
+  <h1>Añadir Recetas</h1>
+
+  <div class="receta">
+    <label for="nombre-receta">Nombre de la Receta:</label>
+    <input type="text" id="nombre-receta">
+
+    <div class="ingredientes">
+      <h2>Ingredientes:</h2>
+      <div id="ingredientes-container">
+        <div class="ingrediente-inputs">
+          <input type="text" class="ingrediente" placeholder="Ingrediente">
+          <input type="text" class="cantidad" placeholder="Cantidad">
+          <select>
+            <option value="gramos">Gramos</option>
+            <option value="litros">Litros</option>
+            <option value="cucharadas">Cucharadas</option>
+            <option value="tazas">Tazas</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="agregarIngrediente()">Agregar</button>
+    </div>
+
+    <button onclick="guardarReceta()">Guardar Receta</button>
+    <div id="recetas-container">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
