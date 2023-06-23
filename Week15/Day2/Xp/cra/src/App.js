@@ -1,7 +1,7 @@
 
-import React from "react";
-import{UserFavoriteAnimals} from "./components/FavoriteAnimals.components";
-// function App (){
+// import React from "react";
+// import{UserFavoriteAnimals} from "./components/FavoriteAnimals.components";
+// // function App (){
 // return(
 //   <h1>We do not use JSX</h1>
 // )
@@ -89,20 +89,7 @@ import{UserFavoriteAnimals} from "./components/FavoriteAnimals.components";
 // }
 // -----------------
 
-export default function App(){
-  const user = {
-    firstName: 'Bob',
-    lastName: 'Dylan',
-    favAnimals: ['Horse', 'Turtle', 'Elephant', 'Monkey']
-  } 
-  return ( 
-  <>
-    <h3>{user.firstName}</h3>
-    <h3>{user.lastName}</h3>
-    <UserFavoriteAnimals favorites ={user.favAnimals}/>
-    </>
-    ) ;
-}
+// 
 // function UserFavoriteAnimals(props){
 //    console.log ("props:", props)
 //   const favorites = props.favorites;
@@ -136,4 +123,14 @@ export default function App(){
 
 
 
+// exercise 4
+import React from 'react';
+import {Exercise4} from './components/Exercise4';
 
+export const App = () => {
+  return (
+    <div>
+      <Exercise4 />
+    </div>
+  );
+};
