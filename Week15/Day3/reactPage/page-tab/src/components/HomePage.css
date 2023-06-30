@@ -1,0 +1,62 @@
+.home-title {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  
+
+  /* Estilos para la página de inicio */
+  * Estilos para la página de inicio */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Estilos para la foto de perfil */
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenedor de texto */
+  .text-container {
+    margin-top: 20px;
+  }
+  
+  /* Estilos adicionales */
+  .container {
+    background-color: #f1d8d8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-picture {
+    border: 4px solid #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
