@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import {Header} from './components/Header.js'
-import {Card} from './components/Card.js'
-import {ContactContainer} from './components/ContactContainer.js'
+import {Header} from './components/header.js'
+import {Card} from './components/card.js'
+import {ContactContainer} from './components/contactcontainer.js'
 
 export default function App() {
   return(
@@ -39,6 +39,7 @@ export default function App() {
 }
 
 
+
 // const Header = () =>{
 //     return(
 //         <div className='header'>
@@ -52,12 +53,6 @@ export default function App() {
 //         </div>
 //     );
 // }
-
-
-
-
-
-
 
 // const Card = (props) =>{
 //     return(
@@ -80,7 +75,6 @@ export default function App() {
 //         </div>
 //     )
 // }
-
 
 
 // const ContactContainer = () => {

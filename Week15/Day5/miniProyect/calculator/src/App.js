@@ -54,7 +54,7 @@ function App() {
         <select value={operation} onChange={handleOperationChange}>
           <option value="+">+</option>
           <option value="-">-</option>
-          <option value=""></option>
+          <option value="">*</option>
           <option value="/">/</option>
         </select>
         <input type="number" value={num2} onChange={handleNum2Change} /><br></br>
@@ -66,6 +66,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

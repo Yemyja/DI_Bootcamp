@@ -13,13 +13,26 @@
 
 // Exercises 2
 
-import React from "react";
-import {Events} from "./components/Events";
+// import React from "react";
+// import {Events} from "./components/Events";
 
-export function App(){
+// export function App(){
+//   return (
+//     <>
+//     <Events />
+//     </>
+//   );
+// }
+
+import React from "react";
+import {Vote} from "./components/vote";
+
+
+
+export function App() {
   return (
     <>
-    <Events />
+    <Vote />
     </>
   );
 }
