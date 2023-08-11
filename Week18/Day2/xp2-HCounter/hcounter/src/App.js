@@ -26,6 +26,7 @@ export default App;
 
 
 // REFACTOR TO FUNCTIONAL COMPONENT USING USE STATE AND EFFECT WITHOUT REDUX and reducer
+// SI LO QUIERO MÁS FACIL NO USO REDUX Y YA NO TENGO QUE HACER EL REDUCER
 
 
 // import React, { useState } from 'react';
