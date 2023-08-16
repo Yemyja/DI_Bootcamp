@@ -36,7 +36,7 @@ function App() {
   return (
     <div className='App'>
       <div className='title1'>
-            <h1>DaveFlix</h1>
+            <h1>Peliculas del momento</h1>
           </div>
       <div className='search_nav'>
           
